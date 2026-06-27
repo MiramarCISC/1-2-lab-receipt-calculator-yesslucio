@@ -13,16 +13,32 @@ int main() {
     cout << "Receipt Calculator" << endl << endl;
 
     cout << "Enter price for item 1: ";
-    cin >> item1;
+    if (!(cin >> item1) || item1 < 0) {
+        cout << "Enter positive number."
+             << endl;
+        return 1;
+    }
 
     cout << "Enter price for item 2: ";
-    cin >> item2;
+    if (!(cin >> item2) || item2 < 0) {
+        cout << "Enter positive number."
+             << endl;
+        return 1;
+    }
 
     cout << "Enter price for item 3: ";
-    cin >> item3;
+    if (!(cin >> item3) || item3 < 0) {
+        cout << "Enter positive number."
+             << endl;
+        return 1;
+    }
 
     cout << "Enter tip percentage: ";
-    cin >> tipPercent;
+    if (!(cin >> tipPercent) || tipPercent < 0) {
+        cout << "Enter positive number."
+             << endl;
+        return 1;
+    }
 
     double subtotal = calculateSubtotal(item1, item2, item3);
     double tax = calculateTax(subtotal);
